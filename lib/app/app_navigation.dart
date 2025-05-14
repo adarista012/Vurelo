@@ -34,7 +34,6 @@ class AppPages {
     GetPage(
       name: Routes.LOGIN,
       page: () => const LoginView(),
-
       transition: Transition.zoom,
     ),
   ];

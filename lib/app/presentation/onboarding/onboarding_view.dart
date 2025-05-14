@@ -28,7 +28,7 @@ class OnboardingView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
 
                 children: [
-                  gap(height: 58),
+                  gap(height: 48),
                   SvgPicture.asset("assets/name_header.svg"),
                   Expanded(
                     child: TabBarView(
@@ -41,13 +41,15 @@ class OnboardingView extends StatelessWidget {
                     ),
                   ),
                   onboardingViewIndicator(controller.tabController.index),
-                  gap(height: 48.0),
 
                   if (controller.tabController.index == 2) ...[
+                    gap(height: 16.0),
                     genericButton('Quiero unirme a Vurelo', context),
                     gap(height: 8.0),
                     genericButton('Ya soy usuario', context, isPrimary: false),
                     gap(height: 16.0),
+                  ] else ...[
+                    gap(height: 48.0),
                   ],
                 ],
               ),

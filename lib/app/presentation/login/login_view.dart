@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:vurelo/app/app_colors.dart';
+import 'package:vurelo/app/app_text_styles.dart';
 import 'package:vurelo/app/presentation/widgets/gap.dart';
 import 'package:vurelo/app/presentation/widgets/generic_button.dart';
 
@@ -18,27 +20,28 @@ class LoginView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
 
             children: [
-              gap(height: 58),
+              gap(height: 48),
               SvgPicture.asset("assets/name_header.svg"),
 
-              gap(height: 24),
-              Image.asset("assets/smartphone_coins.png"),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      gap(height: Get.width / 40),
+                      Image.asset("assets/smartphone_coins.png"),
 
-              Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Text(
-                  'Tu puerta de entrada a la economía digital',
-                  style: TextStyle(
-                    fontSize: 39.0,
-                    fontWeight: FontWeight.w700,
-                    height: 1,
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          'Tu puerta de entrada a la economía digital',
+                          style: AppTextStyles.bodyExtraLargeBold,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
                   ),
-                  textAlign: TextAlign.center,
                 ),
               ),
-
-              Spacer(),
-
               genericButton('Quiero unirme a Vurelo', context),
               gap(height: 8.0),
               genericButton('Ya soy usuario', context, isPrimary: false),
