@@ -15,7 +15,11 @@ Flutter project as challenge to vurelo.
 
 ## How to run
 
-`$flutter run`
+1. `add lib/firebase_options.dart`
+2. `add lib/firebase_options.dart`
+3. `add ios/Runner/GoogleService-Info.plist`
+4. `add android/app/google-services.json`
+5. `$flutter run`
 
 ## Usefull commands
 
@@ -32,7 +36,6 @@ Flutter project as challenge to vurelo.
 ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d7d1aa05-a219-47f1-b551-e1255ec08453) ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3693bd30-9e90-4542-8a28-74f3f43ad2ee)
 
 ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d6236b3e-a737-4176-8051-d84329f39c39)
-
 
 ![f562eae7-2f9a-44c3-83f3-cb5b84fc919d](https://github.com/user-attachments/assets/66d0520c-1aa6-411c-a045-93df5418dce6)
 ![5db12b91-0737-49db-a966-5740850dbc54](https://github.com/user-attachments/assets/89bdd3ed-4ba3-4f98-8898-ca4652d0941b)
