@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:vurelo/app/app_colors.dart';
+import 'package:vurelo/app/app_navigation.dart';
 import 'package:vurelo/app/app_text_styles.dart';
 import 'package:vurelo/app/presentation/widgets/gap.dart';
 import 'package:vurelo/app/presentation/widgets/generic_button.dart';
@@ -12,7 +12,6 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
       body: SizedBox.expand(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -42,9 +41,18 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
               ),
-              genericButton('Quiero unirme a Vurelo', context),
+              genericButton(
+                'Quiero unirme a Vurelo',
+                () => Get.toNamed(Routes.SIGN_UP),
+                context,
+              ),
               gap(height: 8.0),
-              genericButton('Ya soy usuario', context, isPrimary: false),
+              genericButton(
+                'Ya soy usuario',
+                () => Get.toNamed(Routes.SIGN_IN),
+                context,
+                isPrimary: false,
+              ),
               gap(height: 16.0),
             ],
           ),

@@ -1,15 +1,27 @@
 import 'package:get/get.dart';
 import 'package:vurelo/app/app_navigation.dart';
-import 'package:vurelo/app/domain/repositories/local_storage_repository.dart';
+import 'package:vurelo/app/domain/use_cases/get_key_account_use_case.dart';
+import 'package:vurelo/app/domain/use_cases/get_show_onboarding_use_case.dart';
+import 'package:vurelo/app/domain/use_cases/set_show_onboarding_use_case.dart';
 
 class SplashController extends GetxController {
   String? _path;
   String? get path => _path;
 
   String? _route;
-  final LocalStorageRepository localStorageRepository;
 
-  SplashController(this.localStorageRepository) {
+  final GetKeyAccountUseCase _getKeyAccountUseCase;
+
+  final GetShowOnboardingUseCase _getShowOnboardingUseCase;
+  final SetShowOnboardingUseCase _setShowOnboardingUseCase;
+
+  SplashController({
+    required GetKeyAccountUseCase getKeyAccountUseCase,
+    required GetShowOnboardingUseCase getShowOnboardingUseCase,
+    required SetShowOnboardingUseCase setShowOnboardingUseCase,
+  }) : _getKeyAccountUseCase = getKeyAccountUseCase,
+       _getShowOnboardingUseCase = getShowOnboardingUseCase,
+       _setShowOnboardingUseCase = setShowOnboardingUseCase {
     _init();
   }
 
@@ -28,10 +40,16 @@ class SplashController extends GetxController {
   }
 
   void toogle() async {
-    final bool? showOnboarding = localStorageRepository.getShowOnboarding();
+    final bool? showOnboarding = _getShowOnboardingUseCase.call();
+    final String? isLogged = _getKeyAccountUseCase.call();
 
-    _route = showOnboarding == false ? Routes.LOGIN : Routes.ONBOARDING;
-    await localStorageRepository.setShowOnboarding();
+    _route =
+        showOnboarding == false
+            ? isLogged == null
+                ? Routes.LOGIN
+                : Routes.HOME
+            : Routes.ONBOARDING;
+    await _setShowOnboardingUseCase.call(params: false);
 
     if (_route != null) {
       await Future.delayed(const Duration(milliseconds: 1240));

@@ -14,6 +14,7 @@ class App extends StatelessWidget {
       initialRoute: AppPages.INITIAL,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
+        scaffoldBackgroundColor: AppColors.white,
       ),
     );
   }

@@ -1,16 +1,26 @@
-# vurelo
+# Vurelo
 
-A new Flutter project.
+Flutter project as challenge to vurelo.
 
-## Getting Started
+## Key features
 
-This project is a starting point for a Flutter application.
+- One time show onboarding page.
+- Fully functional Sign up flow.
+- Switch between Sign up methods phone number or email address.
+- Switch between phone code number.
+- Show error when code or key not match.
+- Fully functional face id or finger id function.
+- Fully functional persistent session.
+- Fully functional sign out session.
 
-A few resources to get you started if this is your first Flutter project:
+## How to run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+`$flutter run`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usefull commands
+
+`$flutter clean`
+
+`$flutter pub get`
+
+## ScreenShoots and Gifts
