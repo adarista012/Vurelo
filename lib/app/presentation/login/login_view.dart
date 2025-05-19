@@ -14,7 +14,7 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       body: SizedBox.expand(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
 
@@ -26,16 +26,15 @@ class LoginView extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      gap(height: Get.width / 40),
-                      Image.asset("assets/smartphone_coins.png"),
+                      Image.asset(
+                        "assets/smartphone_coins.png",
+                        height: Get.height / 2,
+                      ),
 
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Text(
-                          'Tu puerta de entrada a la economía digital',
-                          style: AppTextStyles.bodyExtraLargeBold,
-                          textAlign: TextAlign.center,
-                        ),
+                      Text(
+                        'Tu puerta de entrada a la economía digital',
+                        style: AppTextStyles.bodyExtraLargeBold,
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),

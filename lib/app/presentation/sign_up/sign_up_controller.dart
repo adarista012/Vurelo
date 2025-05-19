@@ -284,7 +284,7 @@ class SignUpController extends GetxController {
       if (response == true) {
         final LocalAuthentication auth = LocalAuthentication();
         try {
-          await auth
+          final bool responseAuth = await auth
               .authenticate(
                 localizedReason: 'Scan your face to authenticate',
                 options: const AuthenticationOptions(
@@ -296,9 +296,14 @@ class SignUpController extends GetxController {
                 await auth.stopAuthentication();
                 return false;
               });
+          if (responseAuth == true) {
+            saveUserData();
+          }
         } on PlatformException catch (e) {}
       }
-      saveUserData();
+      if (response == false) {
+        saveUserData();
+      }
     }
   }
 
